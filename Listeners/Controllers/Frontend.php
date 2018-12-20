@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 /**
  * Einrichtungshaus Ostermann GmbH & Co. KG - Checkout Carrier Email Authorization
@@ -10,13 +10,21 @@
  * @license   proprietary
  */
 
-namespace OstCheckoutCarrierEmailAuthorization\Listeners;
+namespace OstCheckoutCarrierEmailAuthorization\Listeners\Controllers;
+
+use Enlight_Event_EventArgs as EventArgs;
+use Enlight_Controller_Action as Controller;
 
 class Frontend
 {
-    public function onFrontendPostDispatch(\Enlight_Event_EventArgs $args)
+    /**
+     * ...
+     *
+     * @param EventArgs $args
+     */
+    public function onPostDispatch(EventArgs $args)
     {
-        /** @var $controller \Enlight_Controller_Action */
+        /** @var $controller Controller */
         $controller = $args->getSubject();
         $view = $controller->View();
 
@@ -28,12 +36,12 @@ class Frontend
         $dispatchTypes = Shopware()->Config()->getByNamespace('OstCheckoutCarrierEmailAuthorization', 'dispatchTypes');
         $before = Shopware()->Config()->getByNamespace('OstCheckoutCarrierEmailAuthorization', 'before');
 
+        $view->addTemplateDir(Shopware()->Container()->getParameter('ost_checkout_carrier_email_authorization.view_dir'));
+
         $config = [
-            'enabled' => \in_array((int)$dispatchId, $dispatchTypes, true),
+            'enabled' => in_array((int)$dispatchId, $dispatchTypes, true),
             'before' => $before,
         ];
-
-        $view->addTemplateDir(Shopware()->Container()->getParameter('ost_checkout_carrier_email_authorization.view_dir'));
 
         $view->assign('dprivacy', $config);
     }

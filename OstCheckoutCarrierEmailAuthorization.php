@@ -3,8 +3,6 @@
 /**
  * Einrichtungshaus Ostermann GmbH & Co. KG - Checkout Carrier Email Authorization
  *
- * 
- *
  * 1.0.0
  * - initial release
  *
@@ -38,8 +36,6 @@ class OstCheckoutCarrierEmailAuthorization extends Plugin
         parent::build($container);
     }
 
-
-
     /**
      * Activate the plugin.
      *
@@ -50,8 +46,6 @@ class OstCheckoutCarrierEmailAuthorization extends Plugin
         // clear complete cache after we activated the plugin
         $context->scheduleClearCache($context::CACHE_LIST_ALL);
     }
-
-
 
     /**
      * Install the plugin.
@@ -82,8 +76,6 @@ class OstCheckoutCarrierEmailAuthorization extends Plugin
         parent::install($context);
     }
 
-
-
     /**
      * Update the plugin.
      *
@@ -101,8 +93,6 @@ class OstCheckoutCarrierEmailAuthorization extends Plugin
         // call default updater
         parent::update($context);
     }
-
-
 
     /**
      * Uninstall the plugin.
