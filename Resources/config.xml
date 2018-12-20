@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="../../../../engine/Shopware/Components/Plugin/schema/config.xsd">
+
+    <elements>
+
+        <element type="button">
+            <name>defaultButton</name>
+            <label><![CDATA[<b>Allgemeine Einstellungen</b>]]></label>
+        </element>
+
+        <element type="combo">
+            <name>dispatchTypes</name>
+            <label>Versandarten</label>
+            <store>Shopware.apps.Base.store.Dispatch</store>
+            <options>
+                <multiSelect>true</multiSelect>
+            </options>
+        </element>
+
+        <element type="boolean">
+            <name>before</name>
+            <label>Vor den AGB anzeigen</label>
+        </element>
+    </elements>
+
+</config>
