@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="../../../../engine/Shopware/Components/Plugin/schema/config.xsd">
-
     <elements>
 
         <element type="button">
@@ -12,6 +11,7 @@
         <element type="combo">
             <name>dispatchTypes</name>
             <label>Versandarten</label>
+            <description>Bei welchen Versandarten soll die checkbox angezeigt werden?</description>
             <store>Shopware.apps.Base.store.Dispatch</store>
             <options>
                 <multiSelect>true</multiSelect>
@@ -21,7 +21,8 @@
         <element type="boolean">
             <name>before</name>
             <label>Vor den AGB anzeigen</label>
+            <description>Soll die checkbox vor oder nach den AGB angezeigt werden?</description>
         </element>
-    </elements>
 
+    </elements>
 </config>
