@@ -9,6 +9,9 @@
  * 1.0.1
  * - fixed plugin name
  *
+ * 1.0.2
+ * - fixed plugin configuration
+ *
  * @package   OstCheckoutCarrierEmailAuthorization
  *
  * @author    Tim Windelschmidt <tim.windelschmidt@ostermann.de>

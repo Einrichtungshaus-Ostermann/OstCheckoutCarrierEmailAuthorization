@@ -33,8 +33,11 @@ class Frontend
         }
 
         $dispatchId = $view->getAssign('sDispatch')['id'];
-        $dispatchTypes = Shopware()->Config()->getByNamespace('OstCheckoutCarrierEmailAuthorization', 'dispatchTypes');
-        $before = Shopware()->Config()->getByNamespace('OstCheckoutCarrierEmailAuthorization', 'before');
+
+        $config = Shopware()->Container()->get('shopware.plugin.cached_config_reader')->getByPluginName('OstCheckoutCarrierEmailAuthorization', Shopware()->Shop());
+
+        $dispatchTypes = (array) $config['dispatchTypes'];
+        $before = (boolean) $config['before'];
 
         $view->addTemplateDir(Shopware()->Container()->getParameter('ost_checkout_carrier_email_authorization.view_dir'));
 
